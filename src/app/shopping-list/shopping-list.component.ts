@@ -14,5 +14,8 @@ ingredients: Ingredient[] = [
 
   ngOnInit(): void {
   }
-
+// tslint:disable-next-line:typedef
+onIngredientAdded(ingredient: Ingredient){
+    this.ingredients.push(ingredient);
+}
 }

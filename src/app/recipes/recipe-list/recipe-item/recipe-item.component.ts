@@ -10,7 +10,7 @@ export class RecipeItemComponent implements OnInit {
 
   @Input()
   recipe !: Recipe;
-
+@Input() index!: number;
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef

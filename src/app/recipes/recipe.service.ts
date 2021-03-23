@@ -40,4 +40,8 @@ export class RecipeService {
   addIngredientsToShoppingList(ingredients: Ingredient[] ){
      this.slService.addIngredients(ingredients);
   }
+  // tslint:disable-next-line:typedef
+  getRecipe(index: number){
+     return this.recipes[index];
+  }
 }

@@ -13,6 +13,10 @@ export class ShoppingListService {
    return  this.ingredients.slice();
   }
   // tslint:disable-next-line:typedef
+  getIngredient(index: number){
+    return this.ingredients[index];
+  }
+  // tslint:disable-next-line:typedef
   addIngredient(ingredient: Ingredient){
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());

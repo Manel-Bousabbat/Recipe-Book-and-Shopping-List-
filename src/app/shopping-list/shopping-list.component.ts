@@ -19,6 +19,10 @@ constructor(private slService: ShoppingListService ) { }
       this.ingredients = ingredients;
     } )  ;
   }
+  // tslint:disable-next-line:typedef
+  onEditItem(index: number){
+    this.slService.startedEditing.next(index);
+  }
 // tslint:disable-next-line:typedef
 ngOnDestroy() {
   this.igChangeSub.unsubscribe();

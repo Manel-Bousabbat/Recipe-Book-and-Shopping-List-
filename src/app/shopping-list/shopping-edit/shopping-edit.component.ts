@@ -44,6 +44,16 @@ constructor(private slService: ShoppingListService) { }
   form.reset();
 }
 // tslint:disable-next-line:typedef
+ onClear(){
+  this.slForm.reset();
+  this.editMode = false ;
+}
+// tslint:disable-next-line:typedef
+  onDelete(){
+  this.slService.deleteIngredient(this.editedItemIndex);
+  this.onClear();
+  }
+// tslint:disable-next-line:typedef
 ngOnDestroy(){
   this.subscription.unsubscribe();
 }

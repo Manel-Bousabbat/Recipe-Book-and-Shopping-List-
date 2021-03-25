@@ -32,7 +32,7 @@ constructor(private slService: ShoppingListService) { }
     );
   }
   // tslint:disable-next-line:typedef
-  onAddItem(form: NgForm){
+  onSubmit(form: NgForm){
   const value = form.value ;
   const newIngredient = new Ingredient(value.name, value.amount);
   if (this.editMode){
@@ -40,7 +40,8 @@ constructor(private slService: ShoppingListService) { }
   } else{
     this.slService.addIngredient(newIngredient);
   }
-  this.slService.addIngredient(newIngredient);
+  this.editMode = false;
+  form.reset();
 }
 // tslint:disable-next-line:typedef
 ngOnDestroy(){

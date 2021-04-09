@@ -32,4 +32,8 @@ export class RecipeDetailComponent implements OnInit {
   onEditRecipe(){
     this.router.navigate(['edit'] , {relativeTo: this.route});
   }
+  // tslint:disable-next-line:typedef
+  onDeleteRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+  }
 }

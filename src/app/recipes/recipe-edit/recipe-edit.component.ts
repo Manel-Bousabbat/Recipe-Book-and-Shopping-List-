@@ -26,7 +26,11 @@ export class RecipeEditComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   onSubmit(){
-    console.log(this.recipeForm);
+   if (this.editMode){
+     this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+   } else{
+     this.recipeService.addRecipe(this.recipeForm.value);
+   }
   }
   // tslint:disable-next-line:typedef
   onAddIngredient(){

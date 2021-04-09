@@ -14,7 +14,13 @@ export class RecipeListComponent implements OnInit {
               private route: ActivatedRoute
               ) { }
 
-  ngOnInit(): void {
+  // tslint:disable-next-line:typedef
+  ngOnInit(){
+   this.recipeService.recipesChanged.subscribe(
+       (recipes: Recipe[]) => {
+         this.recipes = recipes;
+       }
+     );
    this.recipes = this.recipeService.getRecipes();
   }
   // tslint:disable-next-line:typedef
